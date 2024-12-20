@@ -1,0 +1,498 @@
+{
+	"info": {
+		"_postman_id": "2ebd2887-3652-437e-84fd-22168f718e71",
+		"name": "orm_backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39351950"
+	},
+	"item": [
+		{
+			"name": "generate token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"surya\",\r\n  \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/token/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new patient profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0NzA5Njk3LCJpYXQiOjE3MzQ3MDkzOTcsImp0aSI6IjA5M2Q3MjdkZmViMDQ3NmFhMTU5MWJhNTc1MWQ1ZTAwIiwidXNlcl9pZCI6Mn0.u7luzG_ZhHlaK3HY28v8MZ3p1Kuw66n4wibqFaWCr2Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"first_name\": \"sujit\",\r\n  \"last_name\": \"Doe\",\r\n  \"date_of_birth\": \"2004-01-01\",\r\n  \"contact_info\": \"123-456-7890\",\r\n  \"medical_history\": \"Updated  history.\",\r\n  \"known_allergies\": \"Penicillin\",\r\n  \"current_medications\": \"Albuterol\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/patients/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"patients",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update patient profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0NzA5Njk3LCJpYXQiOjE3MzQ3MDkzOTcsImp0aSI6IjA5M2Q3MjdkZmViMDQ3NmFhMTU5MWJhNTc1MWQ1ZTAwIiwidXNlcl9pZCI6Mn0.u7luzG_ZhHlaK3HY28v8MZ3p1Kuw66n4wibqFaWCr2Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"first_name\": \"jain\",\r\n  \"last_name\": \"uday\",\r\n  \"date_of_birth\": \"2001-01-01\",\r\n  \"contact_info\": \"123-456-7890\",\r\n  \"medical_history\": \"Updated medical history.\",\r\n  \"known_allergies\": \"Penicillin,dj\",\r\n  \"current_medications\": \"Albuterol\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/patients/1/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"patients",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete patient profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0NzA5Njk3LCJpYXQiOjE3MzQ3MDkzOTcsImp0aSI6IjA5M2Q3MjdkZmViMDQ3NmFhMTU5MWJhNTc1MWQ1ZTAwIiwidXNlcl9pZCI6Mn0.u7luzG_ZhHlaK3HY28v8MZ3p1Kuw66n4wibqFaWCr2Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/patients/3/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"patients",
+						"3",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get patient details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0NzA5Njk3LCJpYXQiOjE3MzQ3MDkzOTcsImp0aSI6IjA5M2Q3MjdkZmViMDQ3NmFhMTU5MWJhNTc1MWQ1ZTAwIiwidXNlcl9pZCI6Mn0.u7luzG_ZhHlaK3HY28v8MZ3p1Kuw66n4wibqFaWCr2Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/patients/2/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"patients",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all patients (with pagination)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0NzA5NDkwLCJpYXQiOjE3MzQ3MDkxOTAsImp0aSI6IjY4MjMyZGMwMzI4MTQ0YzU5ZGNiOTcwMzcyYjYzYmYzIiwidXNlcl9pZCI6Mn0.BvITwgzrUEvnW7KSZHp1hczqRbBAKd9rG3K7-I7mlWg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/patients/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"patients",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get patient's medical history",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0NzEyNjIwLCJpYXQiOjE3MzQ3MTIzMjAsImp0aSI6IjU2ZTE2MjhiNjIxZjQ2ODE4MzA4OTI1MGVkZGJkMGI0IiwidXNlcl9pZCI6Mn0.ywiKNP8A84R7HSn0OVyAxYbhFL5CBnjtZCyaDQ66jYI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/patients/1/medical-history/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"patients",
+						"1",
+						"medical-history",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all prescriptions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0NzEwMDQ1LCJpYXQiOjE3MzQ3MDk3NDUsImp0aSI6IjZjMDgwZDAyNjk5MDQ4NzBiM2IyMGVmODU0MjJjNmZhIiwidXNlcl9pZCI6Mn0.WZtt0CLhxE3QgXSyk1Y0UrJywxk3E4r3NbOgQ4VmCLM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/prescriptions/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"prescriptions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get prescription details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0NzEwMDQ1LCJpYXQiOjE3MzQ3MDk3NDUsImp0aSI6IjZjMDgwZDAyNjk5MDQ4NzBiM2IyMGVmODU0MjJjNmZhIiwidXNlcl9pZCI6Mn0.WZtt0CLhxE3QgXSyk1Y0UrJywxk3E4r3NbOgQ4VmCLM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/prescriptions/3/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"prescriptions",
+						"3",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new prescription",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0NzEwMDQ1LCJpYXQiOjE3MzQ3MDk3NDUsImp0aSI6IjZjMDgwZDAyNjk5MDQ4NzBiM2IyMGVmODU0MjJjNmZhIiwidXNlcl9pZCI6Mn0.WZtt0CLhxE3QgXSyk1Y0UrJywxk3E4r3NbOgQ4VmCLM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"medication_details\": \"Amoxicillin 250mg, three times daily\",\r\n    \"dosage\": \"250mg\",\r\n    \"duration\": \"10 days\",\r\n    \"status\": \"completed\",\r\n    \"created_at\": \"2024-12-20T13:20:00.000000Z\",\r\n    \"updated_at\": \"2024-12-20T13:20:00.000000Z\",\r\n    \"user\": 2,\r\n    \"patient\": 1,\r\n    \"created_by\": 2,\r\n    \"renewed_from\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/prescriptions/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"prescriptions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update prescription",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0NzEwMDQ1LCJpYXQiOjE3MzQ3MDk3NDUsImp0aSI6IjZjMDgwZDAyNjk5MDQ4NzBiM2IyMGVmODU0MjJjNmZhIiwidXNlcl9pZCI6Mn0.WZtt0CLhxE3QgXSyk1Y0UrJywxk3E4r3NbOgQ4VmCLM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"medication_details\": \"Paracetamol 500mg, twice daily\",\r\n    \"dosage\": \"500mg\",\r\n    \"duration\": \"17 days\",\r\n    \"status\": \"active\",\r\n    \"created_at\": \"2024-12-20T13:15:07.018644Z\",\r\n    \"updated_at\": \"2024-12-20T13:15:07.018644Z\",\r\n    \"user\": 2,\r\n    \"patient\": 1,\r\n    \"created_by\": 1,\r\n    \"renewed_from\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/prescriptions/2/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"prescriptions",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Renew existing prescription",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0NzEyNjIwLCJpYXQiOjE3MzQ3MTIzMjAsImp0aSI6IjU2ZTE2MjhiNjIxZjQ2ODE4MzA4OTI1MGVkZGJkMGI0IiwidXNlcl9pZCI6Mn0.ywiKNP8A84R7HSn0OVyAxYbhFL5CBnjtZCyaDQ66jYI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n    \"medication_details\": \"Paracetamol 500mg, twice daily\",\r\n    \"dosage\": \"500mg\",\r\n    \"duration\": \"17 days\",\r\n    \"status\": \"active\",\r\n    \"created_at\": \"2024-12-20T13:15:07.018644Z\",\r\n    \"updated_at\": \"2024-12-20T13:15:07.018644Z\",\r\n    \"user\": 1,\r\n    \"patient\": 1,\r\n    \"created_by\": 1,\r\n    \"renewed_from\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/prescriptions/3/renew/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"prescriptions",
+						"3",
+						"renew",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user_register ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"RINTU\",\r\n    \"email\": \"sai@gmail.com\",\r\n    \"password\": \"12345\",\r\n    \"first_name\": \"Surya\",\r\n    \"last_name\": \"kanta\",\r\n    \"is_active\": true,\r\n    \"role\": \"doctor\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/register/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get patient's prescriptions -",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM0NzEyNjIwLCJpYXQiOjE3MzQ3MTIzMjAsImp0aSI6IjU2ZTE2MjhiNjIxZjQ2ODE4MzA4OTI1MGVkZGJkMGI0IiwidXNlcl9pZCI6Mn0.ywiKNP8A84R7HSn0OVyAxYbhFL5CBnjtZCyaDQ66jYI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/patients/1/prescriptions/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"patients",
+						"1",
+						"prescriptions",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
